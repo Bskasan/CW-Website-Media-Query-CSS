@@ -1,0 +1,154 @@
+@import "theme.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--white);
+  font-family: var(--ff-roboto);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+header img {
+  width: 200px;
+}
+
+button {
+  border: 2px solid var(--red-dark);
+  border-radius: 5px;
+  box-shadow: var(--shadow-light);
+  padding: 1rem 1.2rem;
+  font-family: var(--ff-yeon);
+  font-size: var(--fs-lg);
+  margin: 1rem 0.5rem;
+  white-space: nowrap;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  transform: scale(0.97);
+}
+
+.btn-light {
+  background-color: var(--white);
+  color: var(--red-dark);
+}
+
+.btn-dark {
+  background-color: var(--red-dark);
+  color: var(--white);
+}
+
+nav.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  /* flex-wrap: wrap; - We will use breakpoints instead of this one. */
+}
+
+nav.hero section {
+  flex: 1;
+}
+
+nav.hero img {
+  width: 80%;
+  min-width: 300px;
+}
+
+nav.hero h1 {
+  font-size: var(--fs-xl);
+  line-height: var(--line-h-xl);
+  text-align: justify;
+}
+
+nav.hero p {
+  font-size: var(--fs-lg);
+  line-height: var(--line-h-xl);
+  text-align: justify;
+}
+
+main .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.082);
+  border-radius: 15px;
+  box-shadow: var(--shadow-light);
+  padding: 1rem;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+main .card article {
+  /* Flexi direkt resme verince calismiyor. */
+  flex: 1;
+  line-height: var(--line-h-xl);
+}
+
+main .card img {
+  width: 100%;
+}
+
+main .card:nth-child(odd) {
+  flex-direction: row;
+}
+
+main .card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background-color: var(--blue-light-5);
+  }
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header button {
+    margin: 0.5rem;
+  }
+
+  header img {
+    width: 300px;
+  }
+
+  nav.hero {
+    flex-direction: column;
+  }
+
+  nav.hero section {
+    text-align: center;
+  }
+
+  main .card:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  main .card:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  body {
+    background-color: var(--grey-10);
+  }
+}
